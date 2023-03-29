@@ -20,15 +20,13 @@ public class MainActivity extends AppCompatActivity {
         send_button= findViewById(R.id.send_button_id);
         send_text=findViewById(R.id.send_text_id);
         
-        send_button.setOnClickListener(this::onClick);  
-       
-    }
+       send_button.setOnClickListener(v -> {
 
 
-    private void onClick(View v) {
-        String str = send_text.getText().toString();
-    Intent intent = new Intent(getApplicationContext(), SecondActivity.class);
-    intent.putExtra("message_key", str);
-    startActivity(intent);
+           String str = send_text.getText().toString();
+           Intent intent = new Intent(getApplicationContext(), secondActivty.class);
+           intent.putExtra("message_key", str);
+           startActivity(intent);
+       });
     }
 }
